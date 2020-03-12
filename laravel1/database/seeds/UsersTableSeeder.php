@@ -15,15 +15,15 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
     //    genereate real data
-       factory(App\User::class,10)->create();
+       factory(App\User::class,100)->create();
         
-//generate random data **
+    //generate random data **
 
         // DB::table('users')->insert([
         //     'name' => Str::random(10),
         //     'email' => Str::random(10).'@gmail.com',
         //     'password' => bcrypt('password')
         // ]);
-// **       
+    // **       
     }
 }
