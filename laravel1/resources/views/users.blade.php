@@ -13,7 +13,6 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
-    
 <div class="container">
     <h4>Records of User</h4>
     <table class="table table-bordered data-table">
