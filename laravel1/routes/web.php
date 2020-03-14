@@ -20,13 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('users', 'UserController@index')->name('users');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('users', ['uses'=>'UserController@index', 'as'=>'users.index']);
+//Get data
+Route::get('customer', 'Customercontroller@index')->name('customer');
+//delete customer 
+Route::get('customer/delete/{id}', 'Customercontroller@delete')->name('delete');
