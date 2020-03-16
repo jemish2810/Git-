@@ -5,7 +5,8 @@ use DB;
 use App\Customer;
 use DataTables;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 class Customercontroller extends Controller
 {
     public function index(Request $request)
@@ -23,10 +24,10 @@ class Customercontroller extends Controller
     }
     
 // delete cust
-    public function delete($id)
+    public function delete($id )
     {
+        Mail::to('jemish@logisticinfotech.co.in')->send(new SendMail($id));
         $user = Customer::where('id',$id)->delete();
-        
-        return response()->json(['success' => 'Customer deleted successfully.']);
+        return response()->json(['success' => 'Customer_id ('.$id.') deleted successfully.']);
     }
 }

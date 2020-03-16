@@ -61,11 +61,14 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
     $('body').on('click', '.delete', function () {
         var customer_id = $(this).attr('id');
+        
         if(confirm("Are You sure want to delete !")){
         $.ajax({
             type: 'GET',
             url: SITEURL + "/delete/"+customer_id,
+            data:$(this),
             success: function (data) {
+                
             var oTable = $('.data-table').dataTable(); 
             oTable.fnDraw(false);
             table.ajax.reload();

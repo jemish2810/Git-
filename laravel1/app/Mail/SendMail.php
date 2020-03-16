@@ -18,7 +18,9 @@ class SendMail extends Mailable
      */
     public function __construct($data)
     {
-        $this->data = $data;
+
+       print_r( $this->data = $data);
+        
     }
 
     /**
@@ -28,7 +30,8 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('jemish@logisticinfotech.co.in')->subject('New Mail testing Demo ')->view('dynamic_email_template')->with('data', $this->data);
+        // return $this->from('jemish@logisticinfotech.co.in')->subject('New Mail testing Demo ')->view('dynamic_email_template')->with('data', $this->data);
+        return $this->from('jemish@logisticinfotech.co.in')->subject('Delete Record')->view('Dynamic_mail_content')->with('data', $this->data);
     }
 }
 
