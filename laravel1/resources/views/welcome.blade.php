@@ -69,12 +69,9 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
-                        <a href="{{ url('/users') }}">Users</a>
-                        
-
+                        <a href="{{ url('/sendemail') }}">E-mail </a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
@@ -86,7 +83,6 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>

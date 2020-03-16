@@ -26,3 +26,7 @@ Route::get('users', 'UserController@index')->name('users');
 Route::get('customer', 'Customercontroller@index')->name('customer');
 //delete customer 
 Route::get('customer/delete/{id}', 'Customercontroller@delete')->name('delete');
+
+
+Route::get('/sendemail', 'MailController@index');
+Route::post('/sendemail/send', 'MailController@send');
