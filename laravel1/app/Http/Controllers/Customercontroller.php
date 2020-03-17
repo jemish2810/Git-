@@ -22,11 +22,25 @@ class Customercontroller extends Controller
         
         return view('customer');
     }
-    
+//cerate customer   
+    public function create()
+    {
+        return view('customer_store');
+    }
+//store record
+    public function store(Request $request)
+    {
+        $customer = new Customer;
+        $customer->name = $request->get('name');
+        $customer->email = $request->get('email');
+        $customer->phone_number = $request->get('phone_number');
+        $customer->save();
+        return view('customer');    
+    }
+
 // delete cust
     public function delete($id )
     {
-        Mail::to('jemish@logisticinfotech.co.in')->send(new SendMail($id));
         $user = Customer::where('id',$id)->delete();
         return response()->json(['success' => 'Customer_id ('.$id.') deleted successfully.']);
     }

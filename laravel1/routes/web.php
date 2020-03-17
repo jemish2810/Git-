@@ -24,6 +24,11 @@ Route::get('users', 'UserController@index')->name('users');
 
 //Get data
 Route::get('customer', 'Customercontroller@index')->name('customer');
+//store data
+
+Route::get('customer/create', 'Customercontroller@create')->name('create');
+Route::post('customer', 'Customercontroller@store')->name('store');
+
 //delete customer 
 Route::get('customer/delete/{id}', 'Customercontroller@delete')->name('delete');
 

@@ -14,8 +14,9 @@
 </head>
 <body>
 <div class="container"><br/><br/>
-    <button class="btn btn-info" ><a href="{{ url('/home') }}">Home</a></button><br/><br/>
-    <h4>Records of User</h4>
+    <button class="btn btn-info" ><a href="{{ url('/home') }}">Home</a></button>
+    <button class="btn btn-success"><a href="{{ url('customer/create') }}">Add new</a></button><br /><br />
+    <h4>Records of Customer</h4>
     <table class="table table-bordered data-table">
         <thead>
             <tr>
