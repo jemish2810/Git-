@@ -3,9 +3,15 @@
 
 <head>
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css" />
+    <style>
+        a {
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        
         <br />
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -29,8 +35,10 @@
                     
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Add</button>
+                        <button class="btn btn-dark"><a href="{{ url('/home') }}">Home</a></button>
                     </div>
                 </form>
+        
             </div>
         </div>
     </div>

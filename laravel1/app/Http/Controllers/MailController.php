@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Mail;
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Mail\SendMail;
+use App\Mail\simple_send;
 
 class MailController extends Controller
 {
@@ -28,7 +28,7 @@ class MailController extends Controller
             'message'   =>   $request->message
         );
 
-        Mail::to($to)->send(new SendMail($data));
+        Mail::to($to)->send(new simple_send($data));
         return back()->with('success', 'Thanks for contacting us!');
     }
 

@@ -41,7 +41,9 @@ class Customercontroller extends Controller
 // delete cust
     public function delete($id )
     {
-        $user = Customer::where('id',$id)->delete();
-        return response()->json(['success' => 'Customer_id ('.$id.') deleted successfully.']);
+        // Mail::to('jemish@logisticinfotech.co.in')->send(new SendMail($id));
+        $cust = Customer::destroy($id);
+        return response()->json(['success' =>  'Customer_id ('.$id.') deleted successfully.']);
+        
     }
 }
