@@ -46,8 +46,9 @@
 
 
 <p><h2>Generate Realtime data / facke data (plugin)</h2><br/>
-    Refferlink:: <a href="https://kode-blog.io/laravel-5-faker-tutorial">laravel-faker-tutorial</a> <br/>
-                <a href="https://scotch.io/tutorials/generate-dummy-laravel-data-with-model-factories">laravel-data-with-model-factories(faker)</a><br/>
+    Refferlink::</br> 
+                <a href="https://kode-blog.io/laravel-5-faker-tutorial">1 >laravel-faker-tutorial</a> <br/>
+                <a href="https://scotch.io/tutorials/generate-dummy-laravel-data-with-model-factories">2>laravel-data-with-model-factories(faker)</a><br/>
 	1> composer require fzaninotto/faker --dev</br>
 	2> php artisan db:seed	or <br/>
        php artisan db:seed --class=CustomersTableSeeder<br/></p>
