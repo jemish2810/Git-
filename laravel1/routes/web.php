@@ -26,11 +26,19 @@ Route::get('users', 'UserController@index')->name('users');
 Route::get('customer', 'Customercontroller@index')->name('customer');
 //store data
 
-Route::get('customer/create', 'Customercontroller@create')->name('create');
+Route::get('customer/create', 'Customercontroller@create', function () {
+    dispatch(new App\Observers\CustomerObserver);
+    dd('done');
+});
+
 Route::post('customer', 'Customercontroller@store')->name('store');
 
 //delete customer 
-Route::get('customer/delete/{id}', 'Customercontroller@delete')->name('delete');
+Route::get('customer/delete/{id}', 'Customercontroller@delete',function(){
+    dispatch(new App\Observers\CustomerObserver);
+    dd('done');
+});
+
 Route::get('customer/edit/{id}', 'Customercontroller@edit')->name('edit');
 Route::post('customer/update/{id}', 'Customercontroller@update');
 // Route::resource('customer/update/', 'Customercontroller');
@@ -42,10 +50,7 @@ Route::post('/sendemail/send', 'MailController@send');
 
 //send email using queue jobs 
 Route::get('email-test', function () {
-
     $details['email'] = 'jemish.me@gmail.com';
-
     dispatch(new App\Jobs\SendEmailTest($details));
-
     dd('done');
 });

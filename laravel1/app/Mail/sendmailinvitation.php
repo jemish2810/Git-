@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class sendmailinvitation extends Mailable
 {
@@ -27,7 +28,7 @@ class sendmailinvitation extends Mailable
      * @return $this
      */
     public function build()
-    {
-         return $this->from('jemish@logisticinfotech.co.in')->subject('New Mail testing Demo for Invitation')->view('mail.Invitation_mail')->with('data', $this->data);
+    {   
+         return $this->subject('Welcome Mail')->view('emails.Welcome_mail')->with('data', $this->data);
     }
 }

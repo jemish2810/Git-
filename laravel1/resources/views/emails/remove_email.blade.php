@@ -9,7 +9,7 @@
 
     <center>
         <h2 style="padding: 23px;background: #b3deb8a1;border-bottom: 6px green solid;">
-        Test Demo
+        Your Record Has been Deleted
         </h2>
     </center>
 

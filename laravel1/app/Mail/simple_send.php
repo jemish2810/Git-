@@ -28,6 +28,6 @@ class simple_send extends Mailable
      */
     public function build()
     {
-        return $this->from('jemish@logisticinfotech.co.in')->subject('Mail send for Testing ')->view('mail.mailsend')->with('data', $this->data);
+        return $this->from('jemish@logisticinfotech.co.in')->subject('Mail send for Testing ')->view('mail_Demo.mailsend')->with('data', $this->data);
     }
 }

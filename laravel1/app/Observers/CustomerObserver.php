@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Observers;
-
+use App\Jobs\SendEmailTest;
+use App\Jobs\WelcomeEmail;
 use App\Customer;
 use App\Mail\SendMail;
 use App\Mail\sendmailinvitation;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 
 class CustomerObserver
 {
+    
     /**
      * Handle the customer "created" event.
      *
@@ -19,10 +21,12 @@ class CustomerObserver
      */
     
     public function created(Customer $customer)
-    {   $id = $customer->id;
-        $email = $customer->email;
-        $customer->name = strtoupper($customer->name);
-        Mail::to($customer)->send(new sendmailinvitation($id));
+    {
+        WelcomeEmail::dispatch($customer->email); 
+        // $id = $customer->id;
+        // $email = $customer->email;
+        // $customer->name = strtoupper($customer->name);
+        //  Mail::to($customer)->send(new sendmailinvitation($id));
     }
 
 
@@ -34,8 +38,8 @@ class CustomerObserver
      */
     public function deleted(Customer $customer)
     {
-        $id = $customer->id;
-        Mail::to('jemish.me@gmail.com')->send(new SendMail($id));
+        SendEmailTest::dispatch($customer->email); 
+        // Mail::to('jemish.me@gmail.com')->send(new SendMail($id));
     }
 
     /**

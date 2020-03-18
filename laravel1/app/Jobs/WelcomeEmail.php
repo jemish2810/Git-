@@ -7,13 +7,12 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Mail\SendEmailTest as emailtest ;
 use Illuminate\Support\Facades\Log;
+use App\Mail\sendmailinvitation;
 use Mail as mail;
-class SendEmailTest implements ShouldQueue
+class WelcomeEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
     protected $details;
 
     /**
@@ -23,8 +22,7 @@ class SendEmailTest implements ShouldQueue
      */
     public function __construct($details)
     {
-         
-        // Log::info(json_encode($details));
+        Log::info(json_encode($details));
         $this->details = $details;
     }
 
@@ -35,8 +33,8 @@ class SendEmailTest implements ShouldQueue
      */
     public function handle()
     {
-        $email = new emailtest();
-        // Log::info(json_encode($this->details));
+        
+        $email = new sendmailinvitation();
         mail::to($this->details)->send($email);
     }
 }

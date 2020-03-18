@@ -28,6 +28,6 @@ class SendEmailTest extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.test');
+        return $this->subject('Record Deleted')->view('emails.remove_email');
     }
 }
