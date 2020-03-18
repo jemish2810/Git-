@@ -18,7 +18,7 @@ class CustomerObserver
      * return void
      */
     
-    public function creating(Customer $customer)
+    public function created(Customer $customer)
     {   $id = $customer->id;
         $email = $customer->email;
         $customer->name = strtoupper($customer->name);
