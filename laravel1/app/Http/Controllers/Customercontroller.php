@@ -45,7 +45,8 @@ class Customercontroller extends Controller
     {
         // Mail::to('jemish@logisticinfotech.co.in')->send(new SendMail($id));
         $cust = Customer::destroy($id);
-        return response()->json(['success' =>  'Customer_id ('.$id.') deleted successfully.']);
+        // return response()->json(['success' =>  'Customer_id (' . $id . ') deleted successfully.']);
+        return redirect('/customer');
         
     }
 
