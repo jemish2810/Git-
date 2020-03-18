@@ -90,13 +90,13 @@
 
 //**************************************************************************************************************************************//
 
-<p><h2>Defining Observers<h2><br/>
+<p><h2>Defining Observers</h2><br/>
     1>php artisan make:observer UserObserver --model=User</p><br/>
 
-<p><h2>Make model<h2><br/>
+<p><h2>Make model</h2><br/>
     1> php artisan make:model Customer -mc</p><br/>
 
-<p><h2>Make provider<h2>
+<p><h2>Make provider</h2>
     1> php artisan make:provider CustomerServiceProvider</p><br/><br/>
 
         
@@ -104,13 +104,13 @@ register observer class into AppServiceProvider (boot method)<br/>
 
 
 //**************************************************************************************************************************************//
-<p><h2>Create dummy data using tinker<h2><br/>
+<p><h2>Create dummy data using tinker</h2><br/>
     1>php artisan tinker<br/>
      ``` factory('App\User', 100)->create() ```<br/>
         or<br/>
     >>> factory('App\Customer', 100)->create()<br/></p>
 
-<p><h2>//Tinker cmd<h2><br/>
+<p><h2>//Tinker cmd</h2><br/>
     1>php artisan tinker <br/>
     $customer = App\Customer::find(9);<br/>
     $customer->delete();<br/></p>
