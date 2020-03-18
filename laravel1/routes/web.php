@@ -31,7 +31,9 @@ Route::post('customer', 'Customercontroller@store')->name('store');
 
 //delete customer 
 Route::get('customer/delete/{id}', 'Customercontroller@delete')->name('delete');
-
+Route::get('customer/edit/{id}', 'Customercontroller@edit')->name('edit');
+Route::post('customer/update/{id}', 'Customercontroller@update');
+// Route::resource('customer/update/', 'Customercontroller');
 
 Route::get('/sendemail', 'MailController@index');
 Route::post('/sendemail/send', 'MailController@send');

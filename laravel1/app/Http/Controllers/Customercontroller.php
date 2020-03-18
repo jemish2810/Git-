@@ -7,6 +7,8 @@ use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use Customer as GlobalCustomer;
+
 class Customercontroller extends Controller
 {
     public function index(Request $request)
@@ -41,7 +43,33 @@ class Customercontroller extends Controller
 // delete cust
     public function delete($id )
     {
-        $user = Customer::where('id',$id)->delete();
-        return response()->json(['success' => 'Customer_id ('.$id.') deleted successfully.']);
+        // Mail::to('jemish@logisticinfotech.co.in')->send(new SendMail($id));
+        $cust = Customer::destroy($id);
+        return response()->json(['success' =>  'Customer_id ('.$id.') deleted successfully.']);
+        
+    }
+
+    public function edit($id)
+    {
+        $cust = Customer::find($id);
+        return view('update',compact('cust'));
+    }
+
+
+public function update(Request $request, $id)
+    {
+
+        $data = $this->validate($request, [
+            'name'=>'required',
+            'email'=> 'required|integer',
+            'phone_number' => 'required|integer'
+         ]);
+ 
+      $cust = Customer::find($id);
+      $cust->name = $request->get('name');
+      $cust->email = $request->get('email');
+      $cust->phone_number = $request->get('phone_number');
+      $cust->save();
+      return redirect('/customer')->with('success', 'Employee has been updated Successfully.');
     }
 }

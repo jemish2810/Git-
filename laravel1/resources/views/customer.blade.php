@@ -3,6 +3,7 @@
 <head>
     
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -54,8 +55,16 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             {data: 'phone_number', name: 'phone_number'},
             {data: 'action', name: 'action', orderable: false, searchable: false,
             render: function(data, type, row) {
-              return '<a href="javascript:void(0);" id='+row.id+' data-toggle="tooltip" data-original-title="Delete" class="delete btn btn-danger">Delete</a>';
-              },  
+
+                
+                var editbtn= '<a href="{{url('customer/edit')}}/'+row.id+' " id='+row.id+' data-toggle="tooltip" data-original-title="Delete"class="edit btn btn-info"> <i class="fa fa-edit"></i></a>';
+
+                var deletebtn='<a href="javascript:void(0);" id='+row.id+' data-toggle="tooltip" data-original-title="Delete"class="delete btn btn-danger"><i class="fa fa-trash"></i></a>';
+                return editbtn+deletebtn;
+              },
+            orderable: false,
+            searchable: false,
+            width:'10%'
             }]
     });
             
@@ -80,6 +89,24 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         });
     }
     }); 
+
+    // $('body').on('click', '.edit', function () {
+    //     var customer_id = $(this).attr('id');
+        
+    //     if(confirm("Are You sure want to edit ")){
+    //     $.ajax({
+    //     type: 'GET',
+    //     url: SITEURL + "/edit/"+customer_id,
+    //     data:$(this),
+    //     success: function (data) {
+        
+    //     },
+    //     error: function (data) {
+    //     console.log('Error:', data);
+    //     },
+    //     });
+    //     }
+    // });
 })       
 
 </script>

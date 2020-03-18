@@ -23,6 +23,6 @@ class CustomerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \App\Customer::observe(\App\Observers\CustomerObserver::class);
+        \App\Customer::observe(\App\Observers\CustomerObserver::class); 
     }
 }
