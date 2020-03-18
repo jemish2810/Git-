@@ -106,7 +106,7 @@ register observer class into AppServiceProvider (boot method)<br/>
 //**************************************************************************************************************************************//
 <p><h2>Create dummy data using tinker<h2><br/>
     1>php artisan tinker<br/>
-    >>> factory('App\User', 100)->create()<br/>
+    >>> ```factory('App\User', 100)->create()```<br/>
         or<br/>
     >>> factory('App\Customer', 100)->create()<br/></p>
 
