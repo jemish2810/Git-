@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,9 +35,12 @@ Route::get('customer/edit/{id}', 'Customercontroller@edit')->name('edit');
 Route::post('customer/update/{id}', 'Customercontroller@update');
 // Route::resource('customer/update/', 'Customercontroller');
 
+
 Route::get('/sendemail', 'MailController@index');
 Route::post('/sendemail/send', 'MailController@send');
 
+
+//send email using queue jobs 
 Route::get('email-test', function () {
 
     $details['email'] = 'jemish.me@gmail.com';
