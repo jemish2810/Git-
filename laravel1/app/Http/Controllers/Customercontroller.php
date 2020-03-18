@@ -47,7 +47,6 @@ class Customercontroller extends Controller
         $cust = Customer::destroy($id);
         return response()->json(['success' =>  'Customer_id ('.$id.') deleted successfully.']);
         
-<<<<<<< HEAD
     }
 
     public function edit($id)
@@ -72,7 +71,5 @@ public function update(Request $request, $id)
       $cust->phone_number = $request->get('phone_number');
       $cust->save();
       return redirect('/customer')->with('success', 'Employee has been updated Successfully.');
-=======
->>>>>>> master
     }
 }

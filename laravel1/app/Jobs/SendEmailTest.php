@@ -7,14 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Mail\SendMail ;
-use Mail;
+use App\Mail\SendEmailTest as emailtest ;
+use Mail as mail;
 class SendEmailTest implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $details;
-    
+    /**
+     
+     */
+    protected $user;
+
     /**
      * Create a new job instance.
      *
@@ -22,7 +26,7 @@ class SendEmailTest implements ShouldQueue
      */
     public function __construct($details)
     {
-    echo  $this->details = $details;
+      $this->details = $details;
     }
 
     /**
@@ -32,8 +36,7 @@ class SendEmailTest implements ShouldQueue
      */
     public function handle()
     {
-
-        // $email = new SendMail();
-        // Mail::to($this->details['email'])->send($email);
+        $email = new emailtest();
+        mail::to($this->details['email'])->send($email);
     }
 }

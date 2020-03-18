@@ -37,3 +37,12 @@ Route::post('customer/update/{id}', 'Customercontroller@update');
 
 Route::get('/sendemail', 'MailController@index');
 Route::post('/sendemail/send', 'MailController@send');
+
+Route::get('email-test', function () {
+
+    $details['email'] = 'jemish.me@gmail.com';
+
+    dispatch(new App\Jobs\SendEmailTest($details));
+
+    dd('done');
+});
