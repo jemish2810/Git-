@@ -118,3 +118,33 @@ register observer class into AppServiceProvider (boot method)<br/>
     1>php artisan tinker <br/>
     $customer = App\Customer::find(9);<br/>
     $customer->delete();<br/></p>
+
+//**************************************************************************************************************************************//
+
+<p><h2>Queue job</h2><br/>
+    php artisan queue:table<br/>
+    php artisan migrate<br/>
+    1>php artisan make:job SendEmailTest <br/>
+    2>php artisan make:job WelcomeEmail <br/>
+    <h4>Timeout queue</h4>
+    php artisan queue:listen<br/>
+    php artisan queue:restart<br/>
+    php artisan queue:work --timeout=60<br/>
+    <h4>To retry all of your failed jobs, execute the queue:retry command and pass all as the ID:</h4><br/>
+    php artisan queue:retry all<br/>
+    <h4>To delete all of your failed jobs, you may use the queue:flush command:</h4><br/>
+    php artisan queue:flush<br/></p>
+
+
+//**************************************************************************************************************************************//
+<p><h2>Validation on create or update form</h2><br/>
+<a href="https://appdividend.com/2019/03/09/laravel-5-8-form-validation-tutorial-with-example/">Reffer link 1</a> <br/>
+<a href="https://www.w3adda.com/blog/laravel-5-8-form-validation-tutorial-example">Reffer link 2</a> <br/>
+<a href="https://laravel.com/docs/7.x/validation#introduction">Reffer link 3</a> <br/>
+
+    1>make controller <br/>
+    2>make model<br/>
+    3>migreate table<br/>
+    4>create/edit blade file<br/>
+    5>Creating Form Requests<br/>
+        php artisan make:request Validate_Customer<br/>
