@@ -84,7 +84,7 @@
     php artisan config:clear<br/>
     php artisan cache:clear<br/>
     composer dump-autoload<br/>
-
+    clear<br/>
 <h3>Project Serve</h3> <br/>
     php artisan serve<br/>
 
@@ -114,7 +114,7 @@ register observer class into AppServiceProvider (boot method)<br/>
  ```   
 <br/></p>
 
-<p><h2>//Tinker cmd</h2><br/>
+<p><h2>Tinker cmd</h2><br/>
     1>php artisan tinker <br/>
     $customer = App\Customer::find(9);<br/>
     $customer->delete();<br/></p>
@@ -125,7 +125,7 @@ register observer class into AppServiceProvider (boot method)<br/>
     php artisan queue:table<br/>
     php artisan migrate<br/>
     1>php artisan make:job SendEmailTest <br/>
-    2>php artisan make:job WelcomeEmail <br/>
+    2>php artisan make:job WelcomeEmail <br/> <br/>
     <h4>Timeout queue</h4>
     php artisan queue:listen<br/>
     php artisan queue:restart<br/>
@@ -141,10 +141,9 @@ register observer class into AppServiceProvider (boot method)<br/>
 <a href="https://appdividend.com/2019/03/09/laravel-5-8-form-validation-tutorial-with-example/">Reffer link 1</a> <br/>
 <a href="https://www.w3adda.com/blog/laravel-5-8-form-validation-tutorial-example">Reffer link 2</a> <br/>
 <a href="https://laravel.com/docs/7.x/validation#introduction">Reffer link 3</a> <br/>
-
-    1>make controller <br/>
-    2>make model<br/>
-    3>migreate table<br/>
-    4>create/edit blade file<br/>
-    5>Creating Form Requests<br/>
-        php artisan make:request Validate_Customer<br/>
+    1>make controller 
+    2>make model
+    3>migreate table
+    4>create/edit blade file
+    5>Creating Form Requests
+        php artisan make:request Validate_Customer</p>

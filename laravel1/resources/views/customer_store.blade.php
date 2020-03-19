@@ -1,61 +1,9 @@
-<!doctype html>
-<html>
+@extends('layouts.layout')
 
-<head>
-    <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css" />
-    <style>
-        a {
-            color: inherit;
-        }
-    </style>
-</head>
-<body>
-    {{-- <div class="container">
-        
-        <br />
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h2>Add New Customer</h2> 
-            </div>
-            <div class="panel-body">
-
-                <form method="post" action="{{ route('store') }}"enctype="multipart/form-data">
-                    {{csrf_field()}}
-                    
-                    <div class="form-group">
-                        <label class="col-md-4"> Name</label>
-                        <input type="text" class="form-control" name="name" />
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4">Email</label>
-                        <input type="email" class="form-control" name="email" />
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4">Phone number</label>
-                        <input type="number" class="form-control" name="phone_number" />
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Add</button>
-                        <button class="btn btn-dark"><a href="{{ url('/home') }}">Home</a></button>
-                    </div>
-                </form>
-        
-            </div>
-        </div>
-    </div> --}}
-<style>
-    .uper {
-        
-        width: 50%;
-        margin: 0 auto; 
-        float: none; 
-        margin-bottom: 10px;
-    }
-</style>
+@section('content')
 <div class="card uper">
     <div class="card-header">
-        Add Item
+        New Customer 
     </div>
     <div class="card-body">
         @if ($errors->any())
@@ -86,7 +34,4 @@
         </form>
     </div>
 </div>
-
-</body>
-
-</html>
+@endsection

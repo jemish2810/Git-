@@ -40,7 +40,7 @@ Route::get('customer/delete/{id}', 'Customercontroller@delete',function(){
 });
 
 Route::get('customer/edit/{id}', 'Customercontroller@edit')->name('edit');
-Route::post('customer/update/{id}', 'Customercontroller@update');
+Route::post('customer/update/{id}', 'Customercontroller@update')->name('update');
 // Route::resource('customer/update/', 'Customercontroller');
 
 
