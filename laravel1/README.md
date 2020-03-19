@@ -153,3 +153,12 @@ register observer class into AppServiceProvider (boot method)<br/>
     4>create/edit blade file
     5>Creating Form Requests
         php artisan make:request Validate_Customer</p>
+//**************************************************************************************************************************************//
+<p><h2>Form binding create/update form</h2><br/>
+
+<a href="https://laravelcollective.com/docs/5.1/html#installation">Reffer link 1</a> <br/>
+<a href="https://blog.tekmi.nl/is-it-beneficial-to-add-laravel-collective-html-package-into-your-laravel-project">Reffer link 2</a> <br/>
+<a href="https://www.sitepoint.com/crud-create-read-update-delete-laravel-app/">Reffer link 3</a> <br/>
+<a href="https://github.com/LaravelCollective/docs/blob/5.6/html.md">Reffer link 4</a> <br/>
+
+</p>

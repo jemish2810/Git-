@@ -15,7 +15,13 @@
             </ul>
         </div><br />
         @endif
-        <form method="post" action="{{ route('store') }}" enctype="multipart/form-data" >
+        {{-- Form binding  --}}
+            {!! Form::open(['route' => 'store']) !!}
+            @include('form', ['submitButtonText' => 'Add Candidate'])
+            {!! Form::close() !!}
+        {{-- End form binding --}}
+        
+        {{-- <form method="post" action="{{ route('store') }}" enctype="multipart/form-data" >
             <div class="form-group">
                 @csrf
                 <label for="name">Customer Name:</label>
@@ -31,7 +37,7 @@
             </div>
             <button type="submit" class="btn btn-success">Create </button>
             <button class="btn btn-dark"><a href="{{ url('/customer') }}">Back</a></button>
-        </form>
+        </form> --}}
     </div>
 </div>
 @endsection

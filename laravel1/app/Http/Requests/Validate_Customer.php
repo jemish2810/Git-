@@ -26,7 +26,7 @@ class Validate_Customer extends FormRequest
         return [
             'name' => 'required|max:255',
             'email' => 'required|email',
-            'phone_number' => 'required|numeric'
+            'phone_number' => 'required'
         ];
     }
     public function messages()

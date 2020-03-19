@@ -16,7 +16,18 @@
                 </ul>
             </div><br />
             @endif
-            <form method="post" action="{{ url('customer/update',$cust->id)}}" enctype="multipart/form-data">
+    {{-- Form binding  --}}
+            {!! Form::model($cust,
+                ['method' => 'POST',
+                'action' => ['Customercontroller@update',
+                $cust->id]]) 
+            !!}
+                @include('form', ['submitButtonText' => 'Update Candidate'])
+                
+            {!! Form::close() !!}
+    {{-- Form binding end --}}
+
+            {{-- <form method="post" action="{{ url('customer/update',$cust->id)}}" enctype="multipart/form-data">
                 <div class="form-group">
                     @csrf
                     <label for="name">Customer Name:</label>
@@ -32,7 +43,7 @@
                 </div>
                 <button type="submit" class="btn btn-success">Update</button>
                 <button class="btn btn-dark"><a href="{{ url('/customer') }}">Back</a></button>
-            </form>
+            </form> --}}
         </div>
     </div>
 @endsection
