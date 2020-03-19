@@ -1,29 +1,13 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
  <head>
   <title>How Send an Email in Laravel</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css">
-   .box{
-           margin-top: 150px;
-    width:600px;
-    border-radius: 15px;
-    box-shadow:10px 10px 8px #888888;
-    /* margin:0 auto; */
-    border:1px solid #ccc;
-   }
-   .has-error
-   {
-    border-color:#cc0000;
-    background-color:#ffff99;
-   }
-   
-  </style>
- </head>
- <body>
-         
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
+@extends('layouts.layout')
+
+@section('content')
   <div class="container box">
           
    <h3 align="center"> Send an Email </h3><br />
@@ -59,9 +43,10 @@
     </div>
     <div class="form-group">
      <input type="submit" name="send" class="btn btn-success" id="send" value="Send" />
-     
+     <button class="btn btn-dark"><a href="{{ url('/customer') }}">Back</a></button>
     </div>
    </form>
   </div>
- </body>
-</html>
+  @endsection
+ {{-- </body>
+</html> --}}

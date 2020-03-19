@@ -38,6 +38,20 @@
             float: none;
             margin-bottom: 10px;
         }
+/* mail blade */
+        .box{
+        margin-top: 75px;
+        width:600px;
+        border-radius: 15px;
+        box-shadow:10px 10px 8px #888888;
+        /* margin:0 auto; */
+        border:1px solid #ccc;
+        }
+        .has-error
+        {
+        border-color:#cc0000;
+        background-color:#ffff99;
+        }
     </style>
 
 </head>

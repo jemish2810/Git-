@@ -29,7 +29,11 @@
 <p><h2>Create controller and DataTable class</h2><br/>
     1>php artisan make:controller UsersController<br/>
     2>php artisan datatables:make Users<br/></p>
-    
+
+<p><h2>Create migration</h2><br/>
+    1>php artisan make:migration create_users_table  <br/>
+    php artisan migrate<br/></p>
+
 <p><h2>Make seed</h2><br/>
     1> php artisan make:seeder UsersTableSeeder<br/>
     2> php artisan make:seeder CustomersTableSeeder<br/></p>
@@ -138,9 +142,11 @@ register observer class into AppServiceProvider (boot method)<br/>
 
 //**************************************************************************************************************************************//
 <p><h2>Validation on create or update form</h2><br/>
+
 <a href="https://appdividend.com/2019/03/09/laravel-5-8-form-validation-tutorial-with-example/">Reffer link 1</a> <br/>
 <a href="https://www.w3adda.com/blog/laravel-5-8-form-validation-tutorial-example">Reffer link 2</a> <br/>
 <a href="https://laravel.com/docs/7.x/validation#introduction">Reffer link 3</a> <br/>
+<a href="https://vegibit.com/how-to-validate-form-submissions-in-laravel/">Reffer link 4</a> <br/>
     1>make controller 
     2>make model
     3>migreate table
