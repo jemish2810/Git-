@@ -28,9 +28,9 @@
                 </div>
                 <div class="form-group">
                     <label for="phone_number">Phone_number :</label>
-                    <input type="number" value="{{$cust->phone_number}}" class="form-control" name="phone_number" />
+                    <input type="text" value="{{$cust->phone_number}}" class="form-control" name="phone_number" />
                 </div>
-                <button type="submit" class="btn btn-primary">Create Item</button>
+                <button type="submit" class="btn btn-success">Update</button>
                 <button class="btn btn-dark"><a href="{{ url('/customer') }}">Back</a></button>
             </form>
         </div>

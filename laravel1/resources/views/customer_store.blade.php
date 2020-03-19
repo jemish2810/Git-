@@ -27,10 +27,10 @@
             </div>
             <div class="form-group">
                 <label for="phone_number">Phone_number :</label>
-                <input type="number" class="form-control" name="phone_number" />
+                <input type="text" class="form-control" name="phone_number" />
             </div>
-            <button type="submit" class="btn btn-primary">Create Item</button>
-            <button class="btn btn-dark"><a href="{{ url('/home') }}">Home</a></button>
+            <button type="submit" class="btn btn-success">Create </button>
+            <button class="btn btn-dark"><a href="{{ url('/customer') }}">Back</a></button>
         </form>
     </div>
 </div>
