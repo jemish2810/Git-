@@ -57,7 +57,7 @@
         serverSide: true,
         // ajax: "{{ route('customerinfo') }}",
         ajax: {
-            "url": "{{ url('customerinfo') }}",
+            "url": "{{ route('customerinfo') }}",
             "data": function(d) {
                 d.filter = $('#filter').val();
             }
