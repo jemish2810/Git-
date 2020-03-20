@@ -11,21 +11,20 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 use Customer as GlobalCustomer;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Support\Facades\DB as FacadesDB;
+use Yajra\DataTables\Contracts\DataTable;
 
 class Customercontroller extends Controller
 {
     public function index(Request $request)
     {
-        if (request()->ajax()) {
-            $cust = DB::table('customers')->select('*');
-            return datatables()->of($cust)
-                ->addColumn('action', 'action_button')
-                ->rawColumns(['action'])
-                ->make(true);
-        }
-
-
         return view('customer');
+    }
+
+    public function getdata(){
+        return DataTables::eloquent(Customer::query())->make(true);
+        // return DataTables::of(Customer::query())->make(true);
+        
     }
     //cerate customer   
     public function create()

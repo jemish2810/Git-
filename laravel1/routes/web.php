@@ -24,6 +24,7 @@ Route::get('users', 'UserController@index')->name('users');
 
 //Get data
 Route::get('customer', 'Customercontroller@index')->name('customer');
+Route::get('customerinfo', 'Customercontroller@getdata')->name('customerinfo');
 //store data
 
 Route::get('customer/create', 'Customercontroller@create', function () {

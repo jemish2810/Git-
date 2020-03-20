@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -9,34 +10,43 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<style>
-    a { color: inherit; } 
-</style>
+    <style>
+        a {
+            color: inherit;
+        }
+    </style>
 </head>
+
 <body>
-<div class="container"><br/><br/>
-    <button class="btn btn-info" ><a href="{{ url('/home') }}">Home</a></button>
-    <button class="btn btn-success"><a href="{{ url('customer/create') }}">Add new</a></button><br /><br />
-    <h4>Records of Customer</h4>
-    <table class="table table-bordered data-table">
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>phone no</th>
-                <th >Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{-- body --}}
-        </tbody>
-    </table>
-</div>
+    <div class="container"><br /><br />
+        <button class="btn btn-info"><a href="{{ url('/home') }}">Home</a></button>
+        <button class="btn btn-success"><a href="{{ url('customer/create') }}">Add new</a></button><br /><br />
+        <h4>Records of Customer</h4>
+        <select name="customfilter" id="filter">
+            <option value="1">created_at</option>
+            <option value="2">updated_at</option>
+            {{-- <option value="3">3</option>
+            <option value="4">4</option> --}}
+        </select>
+        <table class="table table-bordered data-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>phone no</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{-- body --}}
+            </tbody>
+        </table>
+    </div>
 </body>
-   
+
 <script type="text/javascript">
-var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
   $(function () {
     var SITEURL = '{{URL::to("/customer")}}';
     console.log(SITEURL)
@@ -44,7 +54,7 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     var table = $('.data-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('customer') }}",
+        ajax: "{{ route('customerinfo') }}",
         headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -89,25 +99,7 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         });
     }
     }); 
-
-    // $('body').on('click', '.edit', function () {
-    //     var customer_id = $(this).attr('id');
-        
-    //     if(confirm("Are You sure want to edit ")){
-    //     $.ajax({
-    //     type: 'GET',
-    //     url: SITEURL + "/edit/"+customer_id,
-    //     data:$(this),
-    //     success: function (data) {
-        
-    //     },
-    //     error: function (data) {
-    //     console.log('Error:', data);
-    //     },
-    //     });
-    //     }
-    // });
 })       
-
 </script>
+
 </html>
