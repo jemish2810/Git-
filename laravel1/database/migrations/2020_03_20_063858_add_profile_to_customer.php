@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Customer1 extends Migration
+class AddProfileToCustomer extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class Customer1 extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone_number');
-            
-            $table->timestamps();
+        Schema::table('customers', function (Blueprint $table) {
+            $table->string('gender');
         });
     }
 
@@ -30,6 +25,8 @@ class Customer1 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::table('customers', function (Blueprint $table) {
+                $table->dropColumn('gender');
+        });
     }
 }

@@ -55,3 +55,5 @@ Route::get('email-test', function () {
     dispatch(new App\Jobs\SendEmailTest($details));
     dd('done');
 });
+
+

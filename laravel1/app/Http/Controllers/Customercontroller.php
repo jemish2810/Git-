@@ -21,12 +21,17 @@ class Customercontroller extends Controller
         return view('customer');
     }
 
-    public function getdata(){
-        return DataTables::eloquent(Customer::query())->make(true);
+    public function getdata(Request $request){
+       
+        if($request["filter"]  != ''){
+            return DataTables::eloquent(Customer::query()->where('gender', $request['filter']))->make(true);    
+        }else{
+
+            return DataTables::eloquent(Customer::query())->make(true);
+        }
         // return DataTables::of(Customer::query())->make(true);
-        
     }
-    //cerate customer   
+    //cerate customer       
     public function create()
     {
         return view('customer_store');
@@ -36,6 +41,7 @@ class Customercontroller extends Controller
     {
         $validatedData = $request->validated();
         \App\Customer::create($validatedData);
+        
         return redirect('/customer');
         //old
         // // $customer = new Customer;
@@ -66,7 +72,6 @@ class Customercontroller extends Controller
 
     public function update(Validate_Customer $request, $id)
     {
-
         $customer = Customer::findOrFail($id);
         $customer->update($request->all());
         return redirect('/customer');

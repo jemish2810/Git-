@@ -22,12 +22,13 @@
         <button class="btn btn-info"><a href="{{ url('/home') }}">Home</a></button>
         <button class="btn btn-success"><a href="{{ url('customer/create') }}">Add new</a></button><br /><br />
         <h4>Records of Customer</h4>
-        <select name="customfilter" id="filter">
-            <option value="1">created_at</option>
-            <option value="2">updated_at</option>
-            {{-- <option value="3">3</option>
-            <option value="4">4</option> --}}
-        </select>
+        {{-- add custom filter --}}
+        <select name="customfilter" id="filter" class="form-control">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br />
+        {{-- end customer filter --}}
         <table class="table table-bordered data-table">
             <thead>
                 <tr>
@@ -35,6 +36,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>phone no</th>
+                    <th>Gender</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -50,11 +52,16 @@
   $(function () {
     var SITEURL = '{{URL::to("/customer")}}';
     console.log(SITEURL)
-    
     var table = $('.data-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('customerinfo') }}",
+        // ajax: "{{ route('customerinfo') }}",
+        ajax: {
+            "url": "{{ url('customerinfo') }}",
+            "data": function(d) {
+                d.filter = $('#filter').val();
+            }
+        },
         headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -63,10 +70,9 @@
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
             {data: 'phone_number', name: 'phone_number'},
+            {data: 'gender', name: 'gender',orderable: false, searchable: false},
             {data: 'action', name: 'action', orderable: false, searchable: false,
             render: function(data, type, row) {
-
-                
                 var editbtn= '<a href="{{url('customer/edit')}}/'+row.id+' " id='+row.id+' data-toggle="tooltip" data-original-title="Delete"class="edit btn btn-info"> <i class="fa fa-edit"></i></a>';
 
                 var deletebtn='<a href="javascript:void(0);" id='+row.id+' data-toggle="tooltip" data-original-title="Delete"class="delete btn btn-danger"><i class="fa fa-trash"></i></a>';
@@ -76,9 +82,13 @@
             searchable: false,
             width:'10%'
             }]
+
+    });
+
+    $('#filter').change(function(e){
+        table.draw();
     });
             
-
     $('body').on('click', '.delete', function () {
         var customer_id = $(this).attr('id');
         
@@ -87,6 +97,7 @@
             type: 'GET',
             url: SITEURL + "/delete/"+customer_id,
             data:$(this),
+            
             success: function (data) {
                 
             var oTable = $('.data-table').dataTable(); 
