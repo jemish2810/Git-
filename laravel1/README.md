@@ -162,3 +162,13 @@ register observer class into AppServiceProvider (boot method)<br/>
 <a href="https://github.com/LaravelCollective/docs/blob/5.6/html.md">Reffer link 4</a> <br/>
 
 </p>
+
+//**************************************************************************************************************************************//
+<p><h2>Getter / Setter method ( accessor / mutator )</h2><br/>
+
+<a href="https://github.com/laravel/framework/issues/7398">Reffer link 1</a> <br/>
+<a href="https://medium.com/@bvipul/laravel-accessors-and-mutators-learn-how-to-use-them-29a1e843ce85">Reffer link 2</a> <br/>
+<a href="https://laravel.com/docs/5.7/eloquent-mutators#accessors-and-mutators">Reffer link 3</a> <br/>
+<a href="http://www.expertphp.in/article/laravel-use-of-accessors-and-mutators-to-format-eloquent-attributes">Reffer link 4</a> <br/>
+
+</p>
