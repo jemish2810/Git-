@@ -17,6 +17,7 @@
     <button class="btn btn-info" ><a href="{{ url('/home') }}">Home</a></button><br/><br/>
     <h4>Records of User</h4>
     <table class="table table-bordered data-table">
+        
         <thead>
             <tr>
                 <th>id</th>
@@ -30,17 +31,17 @@
         </tbody>
     </table>
 </div>
-   
+
 </body>
-   
+
 <script type="text/javascript">
   $(function () {
-    
-    var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('users') }}",
-        columns: [
+      
+      var table = $('.data-table').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('users') }}",
+          columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},

@@ -24,7 +24,9 @@ class Validate_Customer extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
+            
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
             'email' => 'required|email',
             'phone_number' => 'required',
             'gender'=>'required'
@@ -33,7 +35,9 @@ class Validate_Customer extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'An Name is required',
+       
+            'firstname.required' => 'An Name is required',
+            'lastname.required' => 'An Name is required',
             'email.required'  => 'An Email is required',
             'phone_number.required'  => 'The phone_number is required',
             'gender.required'=> 'Gender is required'

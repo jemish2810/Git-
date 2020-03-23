@@ -12,6 +12,7 @@ use App\Mail\SendMail;
 use Customer as GlobalCustomer;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\DB as FacadesDB;
+use Symfony\Component\VarDumper\Cloner\Data;
 use Yajra\DataTables\Contracts\DataTable;
 
 class Customercontroller extends Controller
@@ -40,8 +41,10 @@ class Customercontroller extends Controller
     public function store(Validate_Customer $request)
     {
         $validatedData = $request->validated();
-        \App\Customer::create($validatedData);
-        
+        $c = \App\Customer::create($validatedData);
+       
+            $cc=  Customer::all();
+       
         return redirect('/customer');
         //old
         // // $customer = new Customer;

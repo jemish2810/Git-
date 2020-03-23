@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    
     <div class="container"><br /><br />
         <button class="btn btn-info"><a href="{{ url('/home') }}">Home</a></button>
         <button class="btn btn-success"><a href="{{ url('customer/create') }}">Add new</a></button><br /><br />
@@ -28,20 +29,27 @@
             <option value="male">Male</option>
             <option value="female">Female</option>
         </select><br />
+
+        
         {{-- end customer filter --}}
         <table class="table table-bordered data-table">
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>Name</th>
+                    
+                    <th>F_Name</th>
+                    <th>L_Name</th>
+                    <th>Full_Name</th>
                     <th>Email</th>
                     <th>phone no</th>
                     <th>Gender</th>
                     <th>Action</th>
+                
                 </tr>
             </thead>
             <tbody>
                 {{-- body --}}
+            
             </tbody>
         </table>
     </div>
@@ -67,7 +75,10 @@
                     },
         columns: [
             {data: 'id', name: 'id'},
-            {data: 'name', name: 'name'},
+            
+            {data: 'firstname', name: 'firstname'},
+            {data: 'lastname', name: 'lastname'},{data: 'full_name', name: 'full_name'},
+            
             {data: 'email', name: 'email'},
             {data: 'phone_number', name: 'phone_number'},
             {data: 'gender', name: 'gender',orderable: false, searchable: false},
@@ -78,6 +89,7 @@
                 var deletebtn='<a href="javascript:void(0);" id='+row.id+' data-toggle="tooltip" data-original-title="Delete"class="delete btn btn-danger"><i class="fa fa-trash"></i></a>';
                 return editbtn+deletebtn;
               },
+              
             orderable: false,
             searchable: false,
             width:'10%'

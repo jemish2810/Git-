@@ -1,5 +1,6 @@
 <?php
 
+use App\Customer;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -57,3 +58,6 @@ Route::get('email-test', function () {
 });
 
 
+Route::get('/profiles', function () {
+    return Customer::all();
+});
