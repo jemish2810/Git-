@@ -96,7 +96,8 @@
 
 <p><h2>Defining Observers</h2><br/>
     1>php artisan make:observer UserObserver --model=User</p><br/>
-
+https://scaffold.digital/the-power-of-laravels-observer-pattern/<br/>
+https://subscription.packtpub.com/book/web_development/9781784391584/6/ch06lvl1sec43/an-example-of-model-observers
 <p><h2>Make model</h2><br/>
     1> php artisan make:model Customer -mc</p><br/>
 
@@ -170,5 +171,18 @@ register observer class into AppServiceProvider (boot method)<br/>
 <a href="https://medium.com/@bvipul/laravel-accessors-and-mutators-learn-how-to-use-them-29a1e843ce85">Reffer link 2</a> <br/>
 <a href="https://laravel.com/docs/5.7/eloquent-mutators#accessors-and-mutators">Reffer link 3</a> <br/>
 <a href="http://www.expertphp.in/article/laravel-use-of-accessors-and-mutators-to-format-eloquent-attributes">Reffer link 4</a> <br/>
+
+</p>
+//**************************************************************************************************************************************//
+<p><h2>larave mix </h2><br/>
+
+<a href="https://www.codechief.org/article/laravel-mix-example-tutorial-the-complete-guide">Reffer link 1</a> <br/>
+<a href="https://laravel.com/docs/7.x/mix#running-mix">Reffer link 2</a> <br/>
+
+<a href="https://pusher.com/tutorials/getting-started-laravel-mix-frontend">Reffer link 3</a> <br/>
+<a href="https://appdividend.com/2018/02/19/laravel-mix-compiling-assets-tutorial/">Reffer link 4</a> <br/>
+https://www.sitepoint.com/use-laravel-mix-non-laravel-projects/</br>
+https://www.sitepoint.com/use-laravel-mix-non-laravel-projects/</br>
+https://mattstauffer.com/blog/introducing-laravel-mix-new-in-laravel-5-4/</br>
 
 </p>
