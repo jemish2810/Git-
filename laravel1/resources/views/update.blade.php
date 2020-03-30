@@ -19,6 +19,7 @@
     {{-- Form binding  --}}
             {!! Form::model($cust,
                 ['method' => 'POST',
+                "enctype"=>"multipart/form-data",
                 'action' => ['Customercontroller@update',$cust->id]])!!}
 
             <div class="row form-group">

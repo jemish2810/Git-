@@ -82,18 +82,22 @@ class Customercontroller extends Controller
 
     public function update(Request $request, $id)
     {
-        // $validatedData = $request->validated();
         $customer = Customer::findOrFail($id);
-        dd($customer['image']);  
-        
-        //     // // $name = $request->image->getClientOriginalName();
-        //     $imageName =  time() . '.' . $request->image;
-        //     // $customer['image'] = $imageName;
-        //     $request->image->move(public_path('image'), $imageName);
-        //     // // $post = \App\Customer::create($validatedData);
-        //     $customer->update($request->all());
-        //     return redirect('/customer');
-        
+        $image_name = $request->image;
+        $image = $request->image;
+        $image_name = time() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('image'), $image_name);
+        $form_data = array(
+            'firstname'=> $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'phone_number' => $request->email,
+            'gender' => $request->gender,
+            'image' => $image_name,
+        );
+        Customer::whereId($id)->update($form_data);
+
+        return redirect('/customer')->with('success', 'Data is successfully updated');
     }
 
     

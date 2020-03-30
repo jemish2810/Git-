@@ -186,3 +186,11 @@ https://www.sitepoint.com/use-laravel-mix-non-laravel-projects/</br>
 https://mattstauffer.com/blog/introducing-laravel-mix-new-in-laravel-5-4/</br>
 
 </p>
+//**************************************************************************************************************************************//
+<p><h2>crud profile image  </h2><br/>
+
+<a href="https://www.webslesson.info/2019/03/step-by-step-crud-operation-in-laravel-58-with-file-upload.html">Reffer link 1</a> <br/>
+
+
+</p>
+
