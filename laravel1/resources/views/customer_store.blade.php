@@ -16,7 +16,7 @@
         </div><br />
         @endif
         {{-- Form binding  --}}
-            {!! Form::open(['route' => 'store']) !!}
+            {!! Form::open(['route' => 'store',"enctype"=>"multipart/form-data"]) !!}
             @include('form', ['submitButtonText' => 'Add Candidate'])
             {!! Form::close() !!}
         {{-- End form binding --}}

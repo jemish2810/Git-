@@ -29,7 +29,8 @@ class Validate_Customer extends FormRequest
             'lastname' => 'required|max:255',
             'email' => 'required|email',
             'phone_number' => 'required',
-            'gender'=>'required'
+            'gender'=>'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
     public function messages()
@@ -40,7 +41,8 @@ class Validate_Customer extends FormRequest
             'lastname.required' => 'An Name is required',
             'email.required'  => 'An Email is required',
             'phone_number.required'  => 'The phone_number is required',
-            'gender.required'=> 'Gender is required'
+            'gender.required'=> 'Gender is required',
+            
         ];
     }
 }

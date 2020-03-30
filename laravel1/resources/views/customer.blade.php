@@ -36,7 +36,7 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    
+                    <th>Image</th>
                     <th>F_Name</th>
                     <th>L_Name</th>
                     <th>Full_Name</th>
@@ -75,10 +75,16 @@
                     },
         columns: [
             {data: 'id', name: 'id'},
-            
+            {
+            data: 'image',
+            orderable: false,
+            searchable: false,
+            name: 'image',
+            "render": function(data, type, full, meta) {
+                return "<img src=\"" + data + "\" height=\"60\" width=\"60\" class=\"rounded-circle \" />";
+            } },
             {data: 'firstname', name: 'firstname'},
             {data: 'lastname', name: 'lastname'},{data: 'full_name', name: 'full_name'},
-            
             {data: 'email', name: 'email'},
             {data: 'phone_number', name: 'phone_number'},
             {data: 'gender', name: 'gender',orderable: false, searchable: false},
@@ -124,5 +130,5 @@
     }); 
 })       
 </script>
-
+    
 </html>

@@ -14,6 +14,8 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Yajra\DataTables\Contracts\DataTable;
+use Image;
+use Storage;
 
 class Customercontroller extends Controller
 {
@@ -22,11 +24,12 @@ class Customercontroller extends Controller
         return view('customer');
     }
 
-    public function getdata(Request $request){
-       
-        if($request["filter"]  != ''){
-            return DataTables::eloquent(Customer::query()->where('gender', $request['filter']))->make(true);    
-        }else{
+    public function getdata(Request $request)
+    {
+
+        if ($request["filter"]  != '') {
+            return DataTables::eloquent(Customer::query()->where('gender', $request['filter']))->make(true);
+        } else {
 
             return DataTables::eloquent(Customer::query())->make(true);
         }
@@ -41,11 +44,15 @@ class Customercontroller extends Controller
     public function store(Validate_Customer $request)
     {
         $validatedData = $request->validated();
-        $c = \App\Customer::create($validatedData);
-       
-            $cc=  Customer::all();
-       
+
+        $name = $request->image->getClientOriginalName();
+        $imageName =  time() . '.' . $request->image->extension();
+        $validatedData['image'] = $imageName;
+        $request->image->move(public_path('image'), $imageName);
+        $post = \App\Customer::create($validatedData);
+        $cc =  Customer::all();
         return redirect('/customer');
+
         //old
         // // $customer = new Customer;
         // $customer->name = $request->name;
@@ -73,10 +80,36 @@ class Customercontroller extends Controller
     }
 
 
-    public function update(Validate_Customer $request, $id)
+    public function update(Request $request, $id)
     {
+        // $validatedData = $request->validated();
         $customer = Customer::findOrFail($id);
-        $customer->update($request->all());
-        return redirect('/customer');
+        dd($customer['image']);  
+        
+        //     // // $name = $request->image->getClientOriginalName();
+        //     $imageName =  time() . '.' . $request->image;
+        //     // $customer['image'] = $imageName;
+        //     $request->image->move(public_path('image'), $imageName);
+        //     // // $post = \App\Customer::create($validatedData);
+        //     $customer->update($request->all());
+        //     return redirect('/customer');
+        
+    }
+
+    
+    public function imageUpload()
+    {
+        return view('imageUpload');
+    }
+    public function imageUploadPost()
+    {
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $imageName = time() . '.' . request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images'), $imageName);
+        return back()
+            ->with('success', 'You have successfully upload image.')
+            ->with('image', $imageName);
     }
 }

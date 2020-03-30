@@ -1,10 +1,9 @@
-
 <div class='form-group'>
-    {!! Form::label('firstname', 'firstname:') !!}
+    {!! Form::label('firstname', 'Firstname:') !!}
     {!! Form::text('firstname', null, ['class' => 'form-control']) !!}
 </div>
 <div class='form-group'>
-    {!! Form::label('lastname', 'lastname:') !!}
+    {!! Form::label('lastname', 'Lastname:') !!}
     {!! Form::text('lastname', null, ['class' => 'form-control']) !!}
 </div>
 <div class='form-group'>
@@ -18,6 +17,11 @@
 <div class='form-group'>
     {!! Form::label('gender', 'Gender:') !!}
     {!! Form::text('gender', null, ['class' => 'form-control'] ) !!}
+</div>
+
+<div class='form-group'>
+    {!! Form::label('image', 'image:') !!}
+    {!! Form::file('image', null, ['class' => 'form-control']) !!}
 </div>
 <div class='form-group'>
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-success ']) !!}

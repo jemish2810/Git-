@@ -8,22 +8,27 @@
         </div>
         <div class="card-body">
             @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div><br />
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div><br />
             @endif
     {{-- Form binding  --}}
             {!! Form::model($cust,
                 ['method' => 'POST',
-                'action' => ['Customercontroller@update',
-                $cust->id]]) 
-            !!}
-                @include('form', ['submitButtonText' => 'Update Candidate'])
-                
+                'action' => ['Customercontroller@update',$cust->id]])!!}
+
+            <div class="row form-group">
+                <div class="col-sm-2 col-sm-offset-6 ">
+                    <img src="/{{$cust->image}}  " height="150" width="150" class=" rounded-circle ">
+            </div>
+            </div>
+            @include('form', ['submitButtonText' => 'Update Candidate'])
+              
+
             {!! Form::close() !!}
     {{-- Form binding end --}}
 

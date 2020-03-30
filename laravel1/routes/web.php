@@ -58,6 +58,12 @@ Route::get('email-test', function () {
 });
 
 
-Route::get('/profiles', function () {
-    return Customer::all();
-});
+// Route::get('/profiles', function () {
+//     return Customer::all();
+// });
+
+
+// image upload
+Route::get('upload ', 'Customercontroller@imageUpload')->name('image.upload');
+
+Route::post('upload', 'Customercontroller@imageUploadPost')->name('image.upload.post');

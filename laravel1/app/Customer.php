@@ -12,7 +12,8 @@ class Customer extends Model
         'lastname',
         'email',
         'phone_number',
-        'gender'
+        'gender',
+        'image'
     ];
 
 
@@ -38,4 +39,10 @@ class Customer extends Model
     {
         return $this->attributes['firstname'] . ' ' . $this->attributes['lastname'];
     }
+
+    public function getImageAttribute($value)
+    {
+        return ('image/') . $value;
+    }
 }
+

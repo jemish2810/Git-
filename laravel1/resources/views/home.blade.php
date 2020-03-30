@@ -20,6 +20,8 @@
                             style="text-decoration: none; color: inherit;">Users- Table 1</a></button>
                     <button class="btn btn-secondary"><a href="{{ url('/customer') }}"
                             style="text-decoration: none; color: inherit;">Customer-Table 2</a></button>
+                    <button class="btn btn-primary"><a href="{{ url('/upload') }}"
+                            style="text-decoration: none; color: inherit;">Uploade Image</a></button>
                 </div>
             </div>
         </div>
