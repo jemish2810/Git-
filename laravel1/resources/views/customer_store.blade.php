@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="card uper">
+<div class="card uper bg-light text-dark" style="width:500px">
     <div class="card-header">
         New Customer 
     </div>

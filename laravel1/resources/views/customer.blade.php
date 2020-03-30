@@ -20,8 +20,9 @@
 <body>
     
     <div class="container"><br /><br />
-        <button class="btn btn-info"><a href="{{ url('/home') }}">Home</a></button>
-        <button class="btn btn-success"><a href="{{ url('customer/create') }}">Add new</a></button><br /><br />
+        <button class="btn btn-info"><a href="{{ url('/home') }}" style="text-decoration: none; color: inherit;">Home</a></button>
+        <button class="btn btn-success"><a href="{{ url('customer/create') }}" style="text-decoration: none; color: inherit;">Add New Customer</a></button>
+        
         <h4>Records of Customer</h4>
         {{-- add custom filter --}}
         <select name="customfilter" id="filter" class="form-control">

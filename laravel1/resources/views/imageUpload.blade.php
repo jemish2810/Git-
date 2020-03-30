@@ -4,7 +4,9 @@
     <div class="container">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h2>Laravel image upload </h2>
+                <h2>Image upload </h2>
+                <div><button class="btn btn-info"><a href="{{ url('/home') }}"
+                            style="text-decoration: none; color: inherit;">Home</a></button></div> <br />
             </div>
             <div class="panel-body">
                 @if ($message = Session::get('success'))
@@ -24,6 +26,7 @@
                     </ul>
                 </div>
                 @endif
+            
                 <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
