@@ -194,3 +194,15 @@ https://mattstauffer.com/blog/introducing-laravel-mix-new-in-laravel-5-4/</br>
 
 </p>
 
+//**************************************************************************************************************************************//
+<p><h2>larave relationship </h2><br/>
+
+<a href="https://vuejs.org/v2/guide/migration.html#v-el-and-v-ref-replaced">Reffer link 1</a> <br/>
+<a href="https://blog.hashvel.com/posts/laravel-eloquent-relationships/">Reffer link 2</a> <br/>
+
+<a href="https://programmingpot.com/laravel/laravel-eloquent-relationships/">Reffer link 3</a> <br/>
+<a href="https://appdividend.com/2018/05/16/laravel-model-relationships-example/">Reffer link 4</a> <br/>
+<a href="https://laravel.com/docs/7.x/eloquent-relationships">Reffer link 5</a> <br/>
+
+
+</p>

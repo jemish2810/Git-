@@ -82,9 +82,11 @@ class Customercontroller extends Controller
 
     public function update(Request $request, $id)
     {
+
         $customer = Customer::findOrFail($id);
+        
         $image_name = $request->image;
-        $image = $request->image;
+        $image = $request->image;       
         $image_name = time() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('image'), $image_name);
         $form_data = array(
@@ -99,6 +101,48 @@ class Customercontroller extends Controller
 
         return redirect('/customer')->with('success', 'Data is successfully updated');
     }
+    // public function update(Request $request, $id)
+        // {
+        //     $customer = Customer::findOrFail($id);
+        //     $image_name = $customer['image'];
+        //     // dd($customer['image']);
+        //     $image = $request->file('image');
+        //     if ($image != '') {
+        //         $request->validate([
+        //             'firstname' => 'required|max:255',
+        //             'lastname' => 'required|max:255',
+        //             'email' => 'required|email',
+        //             'phone_number' => 'required',
+        //             'gender' => 'required',
+        //             'image'         =>  'image|max:2048'
+        //         ]);
+
+        //         $image_name = rand() . '.' . $image->getClientOriginalExtension();
+        //         $image->move(public_path('images'), $image_name);
+        //     } else {
+        //         $request->validate([
+        //             'firstname' => 'required|max:255',
+        //             'lastname' => 'required|max:255',
+        //             'email' => 'required|email',
+        //             'phone_number' => 'required',
+        //             'gender' => 'required',
+        //         ]);
+        //     }
+
+        //     $form_data = array(
+        //         'firstname'=> $request->firstname,
+        //         'lastname' => $request->lastname,
+        //         'email' => $request->email,
+        //         'phone_number' => $request->email,
+        //         'gender' => $request->gender,
+        //         'image' => $image_name,
+        //     );
+
+        //     Customer::whereId($id)->update($form_data);
+
+        //     return redirect('/customer')->with('success', 'Data is successfully updated');
+    // }
+
 
     
     public function imageUpload()

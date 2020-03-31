@@ -57,7 +57,6 @@ Route::get('email-test', function () {
     dd('done');
 });
 
-
 // Route::get('/profiles', function () {
 //     return Customer::all();
 // });
@@ -67,3 +66,12 @@ Route::get('email-test', function () {
 Route::get('upload ', 'Customercontroller@imageUpload')->name('image.upload');
 
 Route::post('upload', 'Customercontroller@imageUploadPost')->name('image.upload.post');
+
+
+
+// Laravel Relationship 
+Route::get('category/create', 'Relationship\CategoryController@create')->name('category.create');
+
+
+Route::post('category/store', 'Relationship\CategoryController@store')->name('category.store');
+

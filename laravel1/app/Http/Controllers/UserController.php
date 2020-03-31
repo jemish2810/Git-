@@ -11,15 +11,18 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $data = User::latest()->get();
-            return Datatables::of($data)
-                    ->addIndexColumn()
+        return User::find(1)->categories() ;
+
+        // if ($request->ajax()) {
+        //     $data = User::latest()->get();
+        //     return Datatables::of($data)
+        //             ->addIndexColumn()
                   
-                    ->make(true);
-        }
+        //             ->make(true);
+        // }
       
-        return view('users');
+        // return view('users');
     }
+    
 
 }

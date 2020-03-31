@@ -82,10 +82,12 @@
             searchable: false,
             name: 'image',
             "render": function(data, type, full, meta) {
+ 
                 return "<img src=\"" + data + "\" height=\"60\" width=\"60\" class=\"rounded-circle \" />";
             } },
             {data: 'firstname', name: 'firstname'},
-            {data: 'lastname', name: 'lastname'},{data: 'full_name', name: 'full_name'},
+            {data: 'lastname', name: 'lastname'},
+            {data: 'full_name', name: 'full_name'},
             {data: 'email', name: 'email'},
             {data: 'phone_number', name: 'phone_number'},
             {data: 'gender', name: 'gender',orderable: false, searchable: false},
