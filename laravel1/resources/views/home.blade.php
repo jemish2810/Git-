@@ -22,6 +22,7 @@
                             style="text-decoration: none; color: inherit;">Customer-Table 2</a></button>
                     <button class="btn btn-primary"><a href="{{ url('/upload') }}"
                             style="text-decoration: none; color: inherit;">Uploade Image</a></button>
+                    <button class="btn btn-dark"><a href="{{url('admin/routes')}}"style="text-decoration: none; color: inherit;">Admin Or Not</a></button>                    
                 </div>
             </div>
         </div>

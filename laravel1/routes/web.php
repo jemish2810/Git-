@@ -49,18 +49,12 @@ Route::post('customer/update/{id}', 'Customercontroller@update')->name('update')
 Route::get('/sendemail', 'MailController@index');
 Route::post('/sendemail/send', 'MailController@send');
 
-
 //send email using queue jobs 
 Route::get('email-test', function () {
     $details['email'] = 'jemish.me@gmail.com';
     dispatch(new App\Jobs\SendEmailTest($details));
     dd('done');
 });
-
-// Route::get('/profiles', function () {
-//     return Customer::all();
-// });
-
 
 // image upload
 Route::get('upload ', 'Customercontroller@imageUpload')->name('image.upload');
@@ -75,3 +69,5 @@ Route::get('category/create', 'Relationship\CategoryController@create')->name('c
 
 Route::post('category/store', 'Relationship\CategoryController@store')->name('category.store');
 
+//middelware demo
+Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
