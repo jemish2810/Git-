@@ -74,14 +74,6 @@
                                 </form>
                             </div>
                         </li>
-                        <li>
-                            <a class="nav-link" aria-haspopup="true" href="{{ url('/sendemail') }}">E-mail </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{{ route('category.create') }}">
-                                Create Category
-                            </a>
-                        </li>
                         @endguest
                     </ul>
                 </div>
